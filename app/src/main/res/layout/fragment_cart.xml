@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".presentation.fragments.cartFragment.CartFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/cartToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/back_pressed"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal|start"
+            android:layout_marginStart="@dimen/boxes_large_margin"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/ic_back"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/min_margin"
+                android:fontFamily="@font/mark_pro_bold"
+                android:text="@string/add_address"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/location"
+                app:layout_constraintEnd_toStartOf="@id/location"
+                app:layout_constraintTop_toTopOf="@id/location" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/location"
+                android:layout_width="35dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal|end"
+                android:layout_marginEnd="@dimen/boxes_large_margin"
+                android:backgroundTint="@color/colorPrimaryVariant"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/ic_location"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/labelCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/boxes_large_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:fontFamily="@font/mark_pro_bold"
+        android:text="@string/my_cart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="27sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cartToolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/boxes_large_margin"
+        android:background="@drawable/bottom_sheet_style"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelCart">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRecyclerBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineSeparator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.82" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/boxes_large_margin"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/guidelineRecyclerBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_cart_recycler" />
+
+        <View
+            android:id="@+id/topSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="@dimen/min_margin"
+            android:background="@color/colorSeparator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineRecyclerBottom" />
+
+        <View
+            android:id="@+id/bottomSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="@dimen/min_margin"
+            android:background="@color/colorSeparator"
+            app:layout_constraintBottom_toTopOf="@id/guidelineSeparator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/totalBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/boxes_large_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginEnd="@dimen/boxes_large_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
+            app:layout_constraintBottom_toTopOf="@id/bottomSeparator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topSeparator">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total"
+                android:textColor="@color/white"
+                android:layout_marginTop="3dp"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delivery"
+                android:textColor="@color/white"
+                android:layout_marginBottom="3dp"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="$6000 us"
+                android:fontFamily="@font/mark_pro_bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="3dp"
+                android:textSize="@dimen/small_text_size"
+               app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/delivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Free"
+                android:fontFamily="@font/mark_pro_bold"
+                android:textColor="@color/white"
+                android:layout_marginBottom="3dp"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/checkout"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/colorPrimaryVariant"
+            android:gravity="center"
+            android:text="@string/checkout"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_text_size"
+            android:fontFamily="@font/mark_pro_bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="@id/totalBox"
+            app:layout_constraintEnd_toEndOf="@id/totalBox"
+            app:layout_constraintTop_toBottomOf="@id/bottomSeparator"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

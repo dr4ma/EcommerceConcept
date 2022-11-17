@@ -1,0 +1,10 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item android:drawable="@drawable/ic_drop_down_arrow"
+                android:top="3dp"
+                android:gravity="end"
+                android:left="110dp"/>
+        </layer-list>
+    </item>
+</selector>

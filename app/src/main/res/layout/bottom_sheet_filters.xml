@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_style">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_filter_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/close_filters"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginStart="@dimen/boxes_large_margin"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/ic_close"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_options"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/normal_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/close_filters"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/close_filters" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/done_filters"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginEnd="@dimen/boxes_large_margin"
+            android:backgroundTint="@color/colorPrimaryVariant"
+            android:gravity="center"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_filter_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/boxes_large_margin"
+        android:layout_marginTop="@dimen/extra_large_margin"
+        android:layout_marginEnd="@dimen/boxes_large_margin"
+        app:layout_constraintEnd_toEndOf="@id/top_filter_box"
+        app:layout_constraintStart_toStartOf="@id/top_filter_box"
+        app:layout_constraintTop_toBottomOf="@id/top_filter_box">
+
+        <TextView
+            android:id="@+id/brand_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/brand"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/normal_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_brand"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:entries="@array/array_brands"
+            android:paddingStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/min_margin"
+            android:background="@drawable/spinner_style"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brand_label"
+            />
+
+        <TextView
+            android:id="@+id/price_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/normal_text_size"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/normal_margin"
+            app:layout_constraintStart_toStartOf="@id/spinner_brand"
+            app:layout_constraintTop_toBottomOf="@id/spinner_brand"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_price"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:entries="@array/array_price"
+            android:paddingStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/min_margin"
+            android:background="@drawable/spinner_style"
+            app:layout_constraintStart_toStartOf="@id/price_label"
+            app:layout_constraintTop_toBottomOf="@id/price_label"
+            />
+
+        <TextView
+            android:id="@+id/size_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/normal_text_size"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/normal_margin"
+            app:layout_constraintStart_toStartOf="@id/spinner_price"
+            app:layout_constraintTop_toBottomOf="@id/spinner_price"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_size"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:entries="@array/array_size"
+            android:paddingStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/min_margin"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/spinner_style"
+            app:layout_constraintStart_toStartOf="@id/size_label"
+            app:layout_constraintTop_toBottomOf="@id/size_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

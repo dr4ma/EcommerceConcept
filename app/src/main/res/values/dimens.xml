@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_size">150dp</dimen>
+    <dimen name="radius_navigation">25dp</dimen>
+    <dimen name="smallLabelTextSize">13sp</dimen>
+    <dimen name="extra_min_margin">8dp</dimen>
+    <dimen name="min_margin">10dp</dimen>
+    <dimen name="normal_margin">16dp</dimen>
+    <dimen name="large_margin">20dp</dimen>
+    <dimen name="extra_large_margin">25dp</dimen>
+    <dimen name="boxes_large_margin">30dp</dimen>
+    <dimen name="normal_text_size">18sp</dimen>
+    <dimen name="big_text_size">22sp</dimen>
+    <dimen name="extra_big_text_size">25sp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
+    <dimen name="normal_elevation">5dp</dimen>
+    <dimen name="icon_tab_size">25dp</dimen>
+    <dimen name="color_btn_size">40dp</dimen>
+</resources>

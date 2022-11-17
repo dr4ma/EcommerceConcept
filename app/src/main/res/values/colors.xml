@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="colorPrimary">#010035</color>
+    <color name="colorPrimaryVariant">#FF6E4E</color>
+    <color name="teal_200">#010035</color>
+    <color name="teal_700">#010035</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorBackground">#f5f5f5</color>
+    <color name="colorGrey">#b3b3b3</color>
+    <color name="colorLightGrey">#E0E0E0</color>
+    <color name="colorTabGrey">#b7b7b7</color>
+    <color name="color_transparent">#00FFFFFF</color>
+    <color name="colorRed">#B20000</color>
+    <color name="colorStar">#ffb800</color>
+    <color name="colorCartCardView">#282843</color>
+    <color name="colorSeparator">#404067</color>
+</resources>
